@@ -25,7 +25,24 @@ import ReactDOM from 'react-dom'
 
 // export default App;
 
+/*
+  Header
+    - Logo
+    - Nav Items
 
+  Body
+    - Search
+    - RestaurantContainer
+        - RestaurantCard
+            - Img
+            - Name of Res, Star Rating, cuisine, delivery time
+
+  Footer
+    - Copyright
+    - Links
+    - Address
+    - Contact
+*/
 
 
 
@@ -47,19 +64,43 @@ const Header = ()=>{
   )
 }
 
-const Body = ()=>{
-  <div className='body'>
 
-  </div>
-
+const styleCard = {
+  backgroundColor : "#f0f0f0",
+  border : "none"
 }
 
+
+const RestaurantCard = () => {
+  return (
+    <div className='res-card' style={styleCard}>
+        <img className='res-logo' alt='res-card' src='https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/FOOD_CATALOG/IMAGES/CMS/2024/7/28/f36af56f-c959-4a2d-aa16-150dd6d4fe94_a08441d9-6735-4a48-929b-a15d414048cb.jpg'></img>
+        <h3>
+          Meghana Foods 
+        </h3>
+    </div>
+  )
+}
+
+const Body = ()=>{
+  return (
+  <div className='body'>
+    <div className='search'>
+      Search
+    </div>
+       <div className='res-container'>
+          <RestaurantCard />
+      </div>
+  </div>
+)
+}
 
 
 const AppLayout = ()=>{
   return (
     <div className="app">
       <Header />
+      <Body />
     </div>
   )
 }
